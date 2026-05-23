@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id       Int      @id @default(autoincrement())
+  cin7Id   String   @unique @map("cin7_id") @db.VarChar(64)
+  name     String   @db.VarChar(255)
+  sku      String?  @db.VarChar(128)
+  brand    String?  @db.VarChar(128)
+  price    Decimal? @db.Decimal(12, 2)
+  lastSync DateTime @map("last_sync")
+
+  @@map("products")
+}

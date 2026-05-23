@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cin7 Products Sync</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell" aria-label="Cin7 products sync">
+      <nav class="tabs" aria-label="Sections">
+        <button class="tab tab--active" type="button">Products</button>
+        <button class="tab" type="button" disabled>Status</button>
+      </nav>
+
+      <section class="sync-panel" aria-labelledby="sync-title">
+        <div class="sync-action">
+          <button id="syncButton" class="sync-button" type="button">
+            <span id="sync-title">Update all Products</span>
+          </button>
+
+          <p id="syncStatus" class="sync-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Last successful update: <strong>5.05.26 06:18</strong></span>
+          </p>
+        </div>
+
+        <p class="sync-description">
+          This will update all parts from Cin7 Inventory database.
+        </p>
+      </section>
+
+      <section class="products-section" aria-labelledby="products-title">
+        <div class="section-title">
+          <span aria-hidden="true"></span>
+          <h1 id="products-title">Products List</h1>
+          <span aria-hidden="true"></span>
+        </div>
+
+        <div class="products-table" role="table" aria-label="Products">
+          <div class="products-row products-row--head" role="row">
+            <div role="columnheader">SKU</div>
+            <div role="columnheader">Name</div>
+            <div role="columnheader">Price</div>
+          </div>
+
+          <div id="productsTable" class="products-table-body"></div>
+        </div>
+
+        <div class="pagination" aria-label="Products pagination">
+          <button id="prevPageButton" class="pagination-button" type="button">Previous</button>
+          <span id="paginationStatus" class="pagination-status">Page 1 of 1</span>
+          <button id="nextPageButton" class="pagination-button" type="button">Next</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
